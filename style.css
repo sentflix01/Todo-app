@@ -280,6 +280,7 @@ body {
   /* top: 84rem; */
   top: 86%;
   left: 50%;
+  margin-top:5rem;
   /* margin-left: -11.25rem; or in %  */
   margin-left: -7.815%;
   animation: floating 5s ease-in-out infinite;
