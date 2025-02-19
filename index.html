@@ -19,62 +19,44 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style> -->
 </head>
-<body>
-  <header  >
-  <div class="dayNight" >
-    <img class="img" alt="moon/sun" src="../images/bg-desktop-light.jpg" />
-  </div>
-    <div class="moon">
-      <h1 class="todo">
-        <span class="todo--title">TODO</span>
-      </h1>
-      <div>
-        <img class="sun" alt="moon/sun" src="./images/moon (5).png" />
+<body class="body"> 
+        <header class="header">
+          <div > 
+              <img class="img" alt="Toggle bg-desktop-light" src="images\bg-desktop-light.jpg" />
+          </div>
+          <div class="todo-header">
+                <h1>TODO</h1>
+              <div>
+                <img class="sun"  alt="Toggle moon img" src="images\mmmm.png"/>
+              </div>
+          </div>
+          <form class="todoSearch" name="create">
 
-      </div>
-    </div>
-    <form class="create" name="create">
-        <div>
-          <input type="text" id="searchTasks" placeholder="Create a new Todo |"/>     
-        </div>   
-    </form>
-<div class="form">
- <form class="add-task"name="add-task">
-      <div class="task">
-        <input type="checkbox" id="task1">
-        <label for="task1">Complete online JavaScript course</label>
-        <button class="delete">X</button>
-      </div>
-      <div class="task">
-        <input type="checkbox" id="task1">
-        <label for="task1">Jog around the park 3x</label>
-        <button class="delete">X</button>
-      </div>
-      <div class="task">
-        <input type="checkbox" id="task1">
-        <label for="task1">10 minutes meditation</label>
-        <button class="delete">X</button>
-      </div>
-      <div class="task">
-        <input type="checkbox" id="task1">
-        <label for="task1">Read for 1 hour</label>
-        <button class="delete">X</button>
-      </div>
-      <div class="task">
-        <input type="checkbox" id="task1">
-        <label for="task1">Pick up groceries</label>
-        <button class="delete">X</button>
-      </div>
-      <div class="task">
-        <input type="checkbox" id="task1">
-        <label for="task1">Complete Todo App on Frontend Mentor</label>
-        <button class="delete">X</button>
-      </div>
-    </form>
-  </div>
-  <div  class="drop">
-    <span>Drag and drop to reorder list</span>
-  </div>
-   </header>
+            <div class="checkbox">
+              <div class="custom-checkbox"></div>
+            </div> 
+            <input type="text" id="searchTodoInput" placeholder="Create a new Todo |"/>     
+                 
+          </form>
+        </header>
+
+        <section>
+          <div class="todo-list-container">
+              <ul id="todo-list"></ul>
+                   
+            <div class="followupButtons">
+                    <span class="items-left"> 0 items left</span>
+              <div class="filter-buttons">
+                  <button class="filter" data-filter="all">All</button>
+                  <button class="filter" data-filter="active">Active</button>
+                  <button class="filter" data-filter="completed">Completed</button>                
+              </div>
+              <div>
+                  <button class="clear-completed" data-action="clear-completed">Clear completed</button>
+              </div>
+            </div>
+          </div>
+                    <p class="drop">Drag and drop to reorder list</p>
+        </section>
   </body>
 </html>
