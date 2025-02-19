@@ -179,12 +179,3 @@ h1{
   justify-content: center;
   margin-top:5rem;
 }
-
-/* @keyframes floating {
-  0%, 100% {
-    transform: translateY(-2rem);
-  }
-   50% {
-    transform: translateY(2rem);
-   }
-} */
