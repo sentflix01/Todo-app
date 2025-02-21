@@ -140,7 +140,7 @@ h1{
   box-shadow: none;
 }
 
-#searchTodoInput {
+#TodoInput {
   width:100%;
   font-size: 1.8rem;
 }
