@@ -1,0 +1,35 @@
+
+@media (max-width: 375px) {
+  .background-image{
+    /* height: 31.4rem; */
+    /* height: 30.66vh; */
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    background-image: url("../images/bg-mobile-light.jpg");
+    overflow: hidden;
+    display: block;
+    z-index: -1;
+  }
+  .night .background-image {
+    background-image: url("../images/bg-mobile-dark.jpg");
+  }
+  .filter-buttons {
+      position: absolute;
+      bottom: -60px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      justify-content: center;
+  }
+  
+  .night .filter-buttons {
+      background: hsl(235, 24%, 19%);;
+  }
+
+  
+}
+
