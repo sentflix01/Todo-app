@@ -11,42 +11,12 @@ const itemLeft = document.querySelector('.items-left');
 const filter = document.querySelector('.filter');
 const clearCompleted = document.querySelector('.clear-completed');
 
-// Load saved todos from local storage
-function loadTodos() {
-  const savedTodos = localStorage.getItem("todos");
-  if (savedTodos) {
-      todos = JSON.parse(savedTodos);
-  }
-}
 
-getLocalStorage() {
-  const data = JSON.parse(localStorage.getItem('todo-list'));
-}
-// Save todos to local storage
-function saveTodos() {
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
-setLocalStorage() {
-  localStorage.setItem('todos', JSON.stringify(todos));
-};
-// Add new todo
-todoSearch.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const text = todoInput.value.trim();
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
+  let currentFilter = "all";
 
-  if (text) {
-    const todo = {
-      id: Date.now(),
-      text,
-      completed: false,
-    };
+todoSearch.addEventListener('click', function(e) {
+    e.preventDefault();
 
-    todos.push(todo);
-    saveTodos();
-    renderTodos();
-    todoInput.value = "";
-  }
-});
-
-
-
+    if(text)
+    }
