@@ -70,16 +70,21 @@ body {
   font-size: 1.8rem;
 }
 
-.img {
-  /* height: 31.4rem; */
+.background-image{
+  height: 31.4rem;
   /* height: 30.66vh; */
   width: 100%;
   background-size: cover;
   background-position: center;
   position: absolute;
+  background-image: url("../images/bg-desktop-light.jpg");
   overflow: hidden;
   display: block;
   z-index: -1;
+}
+
+.night .background-image {
+  background-image: url("../images/bg-desktop-dark.jpg");
 }
 
 .todo-header {
@@ -105,13 +110,16 @@ h1 {
   cursor: pointer;
   border-radius: 50%;
   box-shadow: 0 0 50px #fff;
+  cursor: pointer;
 }
-/* night mood */
+
 .todoSearch {
   display: flex;
   align-items: center;
   margin: auto;
   width: 60rem;
+  background: hsl(0, 0%, 98%);
+  border-radius: 5px;
 }
 
 .header {
@@ -131,54 +139,154 @@ h1 {
 .todoSearch input {
   display: flex;
   align-items: center;
-  display: block;
   font-family: Josefin Sans;
   width: 60rem;
   height: auto;
   padding: 2rem 0 2rem 16.67%;
   border-radius: 9px;
-  box-shadow: none;
+  /* box-shadow: none; */
+  font-size: 1.8rem; 
+}
+#todo-input {
+  /* flex: 1; */
+  border: none;
+  background: none;
+  font-size: 1.8rem;
+  background: transparent;
+  outline: none;
+}
+#todo-input::placeholder {
+  color: hsl(236, 9%, 61%);
 }
 
-#TodoInput {
-  width: 100%;
-  font-size: 1.8rem;
+#todo-input:focus {
+  outline: none;
+}
+
+
+.todo-list-container {
+   width: 60rem;
+   margin: auto;
+   background:  hsl(0, 0%, 98%);
+   border-radius: 5px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+   animation: floating 5s ease-in-out infinite;
+}
+
+.night .todo-list-container {
+  background: hsl(235, 24%, 19%);;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+  gap: 20px;
+}
+
+.night .list {
+  border-color: var(--color-border-dark);
+}
+
+.list-item-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 1px solid hsl(233, 11%, 84%);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  /* content: '✔️'; */
+}
+
+.list input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ .list-item-checkbox {
+  background: linear-gradient(135deg,  hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+  input[type="checkbox"]:checked ~ .list-item-text {
+    text-decoration: line-through;
+    color: hsl(233, 11%, 84%);
+} 
+
+.list input[type="checkbox"]:checked ~ .list-item-checkbox::before{
+  content: '✔️';
+  /* content: '✓'; */
+  color: white;
+  font-size: 14px;
+  top: 50%;
+    left: 50%;
+    position: absolute;
+  transform: translate(-50%, -50%);
+}
+.list-item-text {
+  flex: 1;
+}
+
+.list-item-text.completed {
+  text-decoration: line-through;
+  color: hsl(233, 11%, 84%);
+}
+.list-item-delete-icon {
+  opacity: 0;
+  transition: opacity 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: hsl(236, 9%, 61%);
+}
+
+.list:hover .list-item-delete-icon  {
+  opacity: 1;
 }
 
 .followupButtons {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  font-family: Josefin Sans;
-  width: 60rem;
-  margin: auto;
-  height: auto;
-  background-color: #fff;
+  padding: 20px;
+  color: hsl(236, 9%, 61%);
   font-size: 1.8rem;
-  padding: 1.8rem 1rem 1.8rem 1rem;
-  font-size: 1.8rem;
-  border-radius: 9px;
-  box-shadow: 0 10px 30px rgb(0, 0, 0, 0.1);
 }
 
 .filter-buttons {
   display: flex;
-  margin: auto;
   gap: 3rem;
-  border: none;
-  cursor: pointer;
 }
 
 .filter {
-  background-color: #fff;
-  border-color: #fff;
+  background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font-weight: 700;
 }
 
-.drop {
+.filter.active {
+  color: hsl(220, 98%, 61%);
+}
+.drag-drop-text {
   display: flex;
-  align-items: center;
   justify-content: center;
   margin-top: 5rem;
   font-size: 1.8rem;
   font-family: Josefin Sans;
 }
+.delete-btn {
+  opacity: 0;
+  transition: opacity 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: hsl(236, 9%, 61%);
+}
+.list:hover .list-item-delete-icon {
+  opacity: 1;
+}
+
