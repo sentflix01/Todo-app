@@ -10,7 +10,8 @@ const todoList = document.querySelector(".todo-list"); // Fixed selector
 // const filter = document.querySelector('.filter');
 // const clearCompleted = document.querySelector('clear-completed');
 
-let allTodos = [];
+let allTodos = JSON.parse(localStorage.getItem("list")) || [];
+saveItem = () => localStorage.setItem("list", JSON.stringify(allTodos));
 
 todoSearch.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -20,15 +21,15 @@ todoSearch.addEventListener("submit", (e) => {
 function addTodo() {
   const todoText = todoInput.value.trim();
   if (todoText.length > 0) {
-    // Fixed condition
     allTodos.push(todoText);
-    updateTodoList(); // Call updateTodoList to refresh the list
-    todoInput.value = ""; // Clear input after adding
+    saveItem();
+    updateTodoList(); 
+    todoInput.value = ""; 
   }
 }
 
 function createTodoItem(todo, index) {
-  const todoLi = document.createElement("LIst"); // Fixed element type
+  const todoLi = document.createElement("LIst"); 
   const todoId = "todo-" + index;
   todoLi.className = "list";
 
@@ -45,5 +46,16 @@ function updateTodoList() {
   allTodos.forEach((todo, index) => {
     const todoItem = createTodoItem(todo, index);
     todoList.appendChild(todoItem);
+    saveItem();
   });
 }
+const deleteItem = todoList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("list-item-delete-icon")) {
+    const index = e.target.parentElement.index;
+    allTodos.splice(index, 1);
+    saveItem();
+    updateTodoList();
+  }
+});
+
+updateTodoList();
