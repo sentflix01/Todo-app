@@ -1,10 +1,11 @@
-// const img = document.querySelector('img')
-// const sun = document.querySelector('sun');
+const night = document.querySelector('.night')
+const sun = document.querySelector('sun');
 const todoSearch = document.querySelector(".todoSearch");
 // const addTask = document.getElementById('add-task');
 const todoInput = document.getElementById("todo-input");
 // const todoForm = document.querySelector('form');
-const todoList = document.querySelector(".todo-list"); // Fixed selector
+const todoListUL = document.querySelector(".todo-list"); // Fixed selector
+const sunToggle = document.querySelector(".sun-toggle"); // Fixed selector
 // const followupButtons = document.querySelector('followupButtons');
 // const itemLeft = document.querySelector('items-left');
 // const filter = document.querySelector('.filter');
@@ -42,14 +43,14 @@ function createTodoItem(todo, index) {
 }
 
 function updateTodoList() {
-  todoList.innerHTML = "";
+  todoListUL.innerHTML = "";
   allTodos.forEach((todo, index) => {
     const todoItem = createTodoItem(todo, index);
-    todoList.appendChild(todoItem);
+    todoListUL.appendChild(todoItem);
     saveItem();
   });
 }
-const deleteItem = todoList.addEventListener("click", (e) => {
+const deleteItem = todoListUL.addEventListener("click", (e) => {
   if (e.target.classList.contains("list-item-delete-icon")) {
     const index = e.target.parentElement.index;
     allTodos.splice(index, 1);
@@ -58,4 +59,8 @@ const deleteItem = todoList.addEventListener("click", (e) => {
   }
 });
 
+sunToggle.addEventListener("click", () => { 
+  document.body.classList.toggle("night");
+  sun.src = document.body.classList.contains("night") ? "moon (5).png" : "mmmm.png";
+});
 updateTodoList();
