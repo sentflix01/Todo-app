@@ -70,12 +70,11 @@ body {
   font-size: 1.8rem;
 }
 
-body .night {{
-  background-color:hsl(235, 21%, 11%);
-  color:hsl(234, 39%, 85%);
-}}
+html .night {
+  background-color: hsl(235, 21%, 11%);
+}
 
-.background-image{
+.background-image {
   height: 31.4rem;
   /* height: 30.66vh; */
   width: 100%;
@@ -108,7 +107,8 @@ h1 {
   font-weight: 700;
 }
 
-.sun {
+.sun,
+.moon {
   width: 4rem;
   height: 4rem;
   transition: 0.2s;
@@ -116,6 +116,16 @@ h1 {
   border-radius: 50%;
   box-shadow: 0 0 50px #fff;
   cursor: pointer;
+}
+
+.night .moon {
+  display: block;
+}
+.night .sun {
+  display: none;
+}
+.moon {
+  display: none;
 }
 
 .todoSearch {
@@ -150,7 +160,7 @@ h1 {
   padding: 2rem 0 2rem 16.67%;
   border-radius: 9px;
   /* box-shadow: none; */
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
 }
 #todo-input {
   /* flex: 1; */
@@ -171,18 +181,17 @@ h1 {
   background: hsl(237, 14%, 26%);
 }
 
-
 .todo-list-container {
-   width: 60rem;
-   margin: auto;
-   background:  hsl(0, 0%, 98%);
-   border-radius: 5px;
-   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-   animation: floating 5s ease-in-out infinite;
+  width: 60rem;
+  margin: auto;
+  background: hsl(0, 0%, 98%);
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: floating 5s ease-in-out infinite;
 }
 
 .night .todo-list-container {
-  background:  hsl(237, 14%, 26%);
+  background: hsl(237, 14%, 26%);
 }
 
 .list {
@@ -194,7 +203,7 @@ h1 {
 }
 
 .night .list {
-  border-color:  hsl(235, 24%, 19%);
+  border-color: hsl(235, 24%, 19%);
 }
 
 .list-item-checkbox {
@@ -216,22 +225,22 @@ h1 {
 }
 
 input[type="checkbox"]:checked ~ .list-item-checkbox {
-  background: linear-gradient(135deg,  hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
-  input[type="checkbox"]:checked ~ .list-item-text {
-    text-decoration: line-through;
-    color: hsl(233, 11%, 84%);
-} 
+input[type="checkbox"]:checked ~ .list-item-text {
+  text-decoration: line-through;
+  color: hsl(233, 11%, 84%);
+}
 
-.list input[type="checkbox"]:checked ~ .list-item-checkbox::before{
-  content: '✔️';
+.list input[type="checkbox"]:checked ~ .list-item-checkbox::before {
+  content: "✔️";
   /* content: '✓'; */
   color: white;
   font-size: 14px;
   top: 50%;
-    left: 50%;
-    position: absolute;
+  left: 50%;
+  position: absolute;
   transform: translate(-50%, -50%);
 }
 .list-item-text {
@@ -251,7 +260,7 @@ input[type="checkbox"]:checked ~ .list-item-checkbox {
   color: hsl(236, 9%, 61%);
 }
 
-.list:hover .list-item-delete-icon  {
+.list:hover .list-item-delete-icon {
   opacity: 1;
 }
 
@@ -267,13 +276,15 @@ input[type="checkbox"]:checked ~ .list-item-checkbox {
   display: flex;
   gap: 3rem;
 }
-
+.night .filter-buttons {
+  background: hsl(237, 14%, 26%);
+}
 .filter {
   background: none;
-    border: none;
-    cursor: pointer;
-    color: inherit;
-    font-weight: 700;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-weight: 700;
 }
 
 .filter.active {
@@ -297,4 +308,3 @@ input[type="checkbox"]:checked ~ .list-item-checkbox {
 .list:hover .list-item-delete-icon {
   opacity: 1;
 }
-

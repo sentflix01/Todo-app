@@ -1,5 +1,5 @@
-const night = document.querySelector('.night')
-const sun = document.querySelector('sun');
+const night = document.querySelector(".night");
+const sun = document.querySelector("sun");
 const todoSearch = document.querySelector(".todoSearch");
 // const addTask = document.getElementById('add-task');
 const todoInput = document.getElementById("todo-input");
@@ -10,7 +10,9 @@ const sunToggle = document.querySelector(".sun-toggle"); // Fixed selector
 // const itemLeft = document.querySelector('items-left');
 // const filter = document.querySelector('.filter');
 // const clearCompleted = document.querySelector('clear-completed');
-
+sunToggle.addEventListener("click", () => {
+  document.body.classList.toggle("night");
+});
 let allTodos = JSON.parse(localStorage.getItem("list")) || [];
 saveItem = () => localStorage.setItem("list", JSON.stringify(allTodos));
 
@@ -22,22 +24,31 @@ todoSearch.addEventListener("submit", (e) => {
 function addTodo() {
   const todoText = todoInput.value.trim();
   if (todoText.length > 0) {
-    allTodos.push(todoText);
+    const todoObject = {
+      text: todoText,
+      completed: false,
+    };
+    allTodos.push(todoObject);
     saveItem();
-    updateTodoList(); 
-    todoInput.value = ""; 
+    updateTodoList();
+    todoInput.value = "";
   }
 }
 
 function createTodoItem(todo, index) {
-  const todoLi = document.createElement("LIst"); 
+  const todoLi = document.createElement("LIst");
   const todoId = "todo-" + index;
+  const todoText = todo.text;
   todoLi.className = "list";
 
   todoLi.innerHTML = `
       <input type="checkbox" id="${todoId}" />
-   <label for="${todoId}" class="list-item-checkbox"></label>
-   <label for="${todoId}" class="list-item-text">${todo} </label>
+   <label for="${todoId}" class="list-item-checkbox  ${
+    todo.completed ? "checked" : ""
+  }"onclick="toggleTodo(${todo.id})""></label>
+   <label for="${todoId}" class="list-item-text"  ${
+    todo.completed ? "completed" : ""
+  }">${todo} </label>
   <div class="list-item-delete-icon">❌</div>`;
   return todoLi;
 }
@@ -50,6 +61,13 @@ function updateTodoList() {
     saveItem();
   });
 }
+// const checkItem = todoLi.querySelector("input");
+// checkItem.addEventListener("change", (e) => {
+//   const index = e.target.parentElement.index;
+//   allTodos[index].completed = checkItem.checked;
+//   saveItem();
+// });
+
 const deleteItem = todoListUL.addEventListener("click", (e) => {
   if (e.target.classList.contains("list-item-delete-icon")) {
     const index = e.target.parentElement.index;
@@ -59,8 +77,4 @@ const deleteItem = todoListUL.addEventListener("click", (e) => {
   }
 });
 
-sunToggle.addEventListener("click", () => { 
-  document.body.classList.toggle("night");
-  sun.src = document.body.classList.contains("night") ? "moon (5).png" : "mmmm.png";
-});
 updateTodoList();
