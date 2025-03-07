@@ -1,20 +1,17 @@
 const night = document.querySelector(".night");
-const sun = document.querySelector("sun");
+const sunToggle = document.querySelector(".sun-toggle");
 const todoSearch = document.querySelector(".todoSearch");
-// const addTask = document.getElementById('add-task');
 const todoInput = document.getElementById("todo-input");
-// const todoForm = document.querySelector('form');
-const todoListUL = document.querySelector(".todo-list"); // Fixed selector
-const sunToggle = document.querySelector(".sun-toggle"); // Fixed selector
-// const followupButtons = document.querySelector('followupButtons');
-// const itemLeft = document.querySelector('items-left');
-// const filter = document.querySelector('.filter');
-// const clearCompleted = document.querySelector('clear-completed');
+const todoListUL = document.querySelector(".todo-list");
+const filterButtons = document.querySelector(".filter-buttons");
+
 sunToggle.addEventListener("click", () => {
   document.body.classList.toggle("night");
 });
-let allTodos = JSON.parse(localStorage.getItem("list")) || [];
-saveItem = () => localStorage.setItem("list", JSON.stringify(allTodos));
+
+let allTodos = JSON.parse(localStorage.getItem("todos")) || [];
+let currentFilter = "all";
+const saveItem = () => localStorage.setItem("todos", JSON.stringify(allTodos));
 
 todoSearch.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -30,51 +27,74 @@ function addTodo() {
     };
     allTodos.push(todoObject);
     saveItem();
-    updateTodoList();
+    renderTodos();
     todoInput.value = "";
   }
 }
 
 function createTodoItem(todo, index) {
-  const todoLi = document.createElement("LIst");
+  const todoLi = document.createElement("li");
   const todoId = "todo-" + index;
-  const todoText = todo.text;
   todoLi.className = "list";
 
   todoLi.innerHTML = `
-      <input type="checkbox" id="${todoId}" />
-   <label for="${todoId}" class="list-item-checkbox  ${
+    <input type="checkbox" id="${todoId}" ${todo.completed ? "checked" : ""} />
+    <label for="${todoId}" class="list-item-checkbox ${
     todo.completed ? "checked" : ""
-  }"onclick="toggleTodo(${todo.id})""></label>
-   <label for="${todoId}" class="list-item-text"  ${
+  }"></label>
+    <label for="${todoId}" class="list-item-text ${
     todo.completed ? "completed" : ""
-  }">${todo} </label>
-  <div class="list-item-delete-icon">❌</div>`;
+  }">${todo.text}</label>
+    <div class="list-item-delete-icon">❌</div>`;
   return todoLi;
 }
 
-function updateTodoList() {
+function renderTodos() {
   todoListUL.innerHTML = "";
-  allTodos.forEach((todo, index) => {
-    const todoItem = createTodoItem(todo, index);
-    todoListUL.appendChild(todoItem);
-    saveItem();
-  });
-}
-// const checkItem = todoLi.querySelector("input");
-// checkItem.addEventListener("change", (e) => {
-//   const index = e.target.parentElement.index;
-//   allTodos[index].completed = checkItem.checked;
-//   saveItem();
-// });
 
-const deleteItem = todoListUL.addEventListener("click", (e) => {
-  if (e.target.classList.contains("list-item-delete-icon")) {
-    const index = e.target.parentElement.index;
-    allTodos.splice(index, 1);
-    saveItem();
-    updateTodoList();
+  const filteredTodos = allTodos.filter((todo) => {
+    if (currentFilter === "active") return !todo.completed;
+    if (currentFilter === "completed") return todo.completed;
+    return true;
+  });
+  filteredTodos.forEach((todo) => {
+    const todoItem = createTodoItem(todo);
+    todoListUL.appendChild(todoItem); 
+  });
+  if (filteredTodos.length > 7) {
+    todoListUL.classList.add("scrollable");
+  } else {
+    todoListUL.classList.remove("scrollable");
   }
+}
+todoListUL.addEventListener("click", (e) => {
+  const index = Array.from(todoListUL.children).indexOf(
+    e.target.parentElement);
+  if (e.target.classList.contains("list-item-delete-icon")) {
+    allTodos.splice(index, 1);
+  } else if (e.target.classList.contains("list-item-checkbox")) {
+    allTodos[index].completed = !allTodos[index].completed;
+  }
+  saveItem();
+  renderTodos();
 });
 
-updateTodoList();
+// function renderTodos() {
+//   todoListUL.innerHTML = "";
+
+//   const filteredTodos = all.filter((todo) => {
+//     if (currentFilter === "active") return !todo.completed;
+//     if (currentFilter === "completed") return todo.completed;
+//     return true;
+//   });
+// };
+// filterButtons.forEach((button) => {
+//   button.addEventListener("click", () => {
+//     filterButtons.forEach((btn) => btn.classList.remove("active"));
+//     button.classList.add("active");
+//     currentFilter = button.dataset.filter;
+//     renderTodos();
+//   });
+// });
+
+renderTodos();

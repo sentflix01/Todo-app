@@ -308,3 +308,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
 .list:hover .list-item-delete-icon {
   opacity: 1;
 }
+.scrollable {
+  max-height: 300px;
+  overflow-y: auto;
+}
