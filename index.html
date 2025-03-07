@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /> -->
     <link
       href="https://fonts.google.com/specimen/Josefin+Sans"
       rel="stylesheet"
@@ -14,6 +15,10 @@
       type="image/png"
       sizes="32x32"
       href="./images/download (10).png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
     <title>SENTFLIX | Todo app</title>
@@ -27,34 +32,77 @@
   </head>
   <body class="body">
     <header class="header">
-      <div>
-        <img
-          class="img"
-          alt="Toggle bg-desktop-light"
-          src="images\bg-desktop-light.jpg"
-        />
-      </div>
+      <!-- <marquee bgcolor="lightyellow" direction="left"><b><font size="5" color="red">Created by... GANESH TEWARI,AVDHESH PRATAP,VINEETH
+      </font></b>
+      </marquee> -->
+      <div class="background-image"></div>
       <div class="todo-header">
         <h1>TODO</h1>
-        <div>
-          <img class="sun" alt="Toggle moon img" src="images\mmmm.png" />
+        <div class="sun-toggle" aria-label="sun-toggle">
+          <img class="moon" alt="Toggle night" src="images/mmmm.png" />
+          <img class="sun" alt="Toggle day" src="images/moon (5).png" />
         </div>
       </div>
 
-      <form class="todoSearch" name="todoSearch">
-        <div class="add-task">
-          <div class="custom-checkbox"></div>
-        </div>
-        <input type="text" id="TodoInput" placeholder="Create a new Todo |" />
+      <form id="add-task" class="todoSearch">
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Search or Create a new Todo |"
+          required
+        />
       </form>
     </header>
 
     <section>
       <div class="todo-list-container">
-        <ul id="todo-list"></ul>
-
+        <ul class="todo-list">
+          <!-- <li class="list">
+            <input type="checkbox" id="task-1" />
+            <label for="task-1" class="list-item-checkbox">
+            </label>
+            <label for="task-1" class="list-item-text">
+              Complete online JavaScript course
+            </label>
+            <div class="list-item-delete-icon">❌</div>
+          </li>
+          <li class="list">
+            <input type="checkbox" id="task-2" />
+            <label for="task-2" class="list-item-checkbox">
+            </label>
+            <label for="task-2" class="list-item-text">
+              Jog around the park 3x
+            </label>
+            <div class="list-item-delete-icon">❌</div>
+          </li>
+          <li class="list">
+            <input type="checkbox" id="task-3" />
+            <label for="task-3" class="list-item-checkbox">
+            </label>
+            <label for="task-3" class="list-item-text">
+              Complete Todo App on Frontend Mentor
+            </label>
+            <div class="list-item-delete-icon">❌</div>
+          </li>
+          <li class="list">
+            <input type="checkbox" id="task-4" />
+            <label for="task-4" class="list-item-checkbox">
+            </label>
+            <label for="task-4" class="list-item-text">
+              Pick up groceries
+            </label>
+            <div class="list-item-delete-icon">❌</div>
+          </li>
+          <li class="list">
+            <input type="checkbox" id="task-5" />
+            <label for="task-5" class="list-item-checkbox">
+            </label>
+            <label for="task-5" class="list-item-text"> Read for 1 hour </label>
+            <div class="list-item-delete-icon">❌</div>
+          </li> -->
+        </ul>
         <div class="followupButtons">
-          <span class="items-left"> 0 items left</span>
+          <span class="items-left">0 items left</span>
           <div class="filter-buttons">
             <button class="filter" data-filter="all">All</button>
             <button class="filter" data-filter="active">Active</button>
@@ -67,7 +115,7 @@
           </div>
         </div>
       </div>
-      <p class="drop">Drag and drop to reorder list</p>
+      <p class="drag-drop-text">Drag and drop to reorder list</p>
     </section>
   </body>
 </html>
