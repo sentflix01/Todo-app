@@ -115,7 +115,6 @@ h1 {
   cursor: pointer;
   border-radius: 50%;
   box-shadow: 0 0 50px #fff;
-  cursor: pointer;
 }
 
 .night .moon {
@@ -159,7 +158,6 @@ h1 {
   height: auto;
   padding: 2rem 0 2rem 16.67%;
   border-radius: 9px;
-  /* box-shadow: none; */
   font-size: 1.8rem;
 }
 #todo-input {
@@ -311,4 +309,8 @@ input[type="checkbox"]:checked ~ .list-item-text {
 .scrollable {
   max-height: 300px;
   overflow-y: auto;
+}
+.items-left {
+  font-size: 1.8rem;
+  color: hsl(236, 9%, 61%);
 }
