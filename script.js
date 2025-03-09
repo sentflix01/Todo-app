@@ -4,8 +4,9 @@ const todoSearch = document.querySelector(".todoSearch");
 const todoInput = document.getElementById("todo-input");
 const todoListUL = document.querySelector(".todo-list");
 const filterButtons = document.querySelector(".filter-buttons");
-const clearCompleted = document.querySelector(".clear-completed");
-
+const clearCompletedBtn = document.querySelector(".clear-completed");
+const filterBtn = document.querySelector(".filter");
+// Theme toggle
 sunToggle.addEventListener("click", () => {
   document.body.classList.toggle("night");
 });
@@ -14,24 +15,15 @@ let allTodos = JSON.parse(localStorage.getItem("todos")) || [];
 let currentFilter = "all";
 const saveItem = () => localStorage.setItem("todos", JSON.stringify(allTodos));
 
+function saveTodos() {
+  localStorage.setItem("todos", JSON.stringify(allTodos));
+}
+
 todoSearch.addEventListener("submit", (e) => {
   e.preventDefault();
   addTodo();
+  renderTodos();
 });
-
-function addTodo() {
-  const todoText = todoInput.value.trim();
-  if (todoText.length > 0) {
-    const todoObject = {
-      text: todoText,
-      completed: false,
-    };
-    allTodos.push(todoObject);
-    saveItem();
-    renderTodos();
-    todoInput.value = "";
-  }
-}
 
 function createTodoItem(todo, index) {
   const todoLi = document.createElement("li");
@@ -51,6 +43,20 @@ function createTodoItem(todo, index) {
   return todoLi;
 }
 
+// Add new todo
+function addTodo() {
+  const todoText = todoInput.value.trim();
+  if (todoText.length > 0) {
+    const todoObject = {
+      text: todoText,
+      completed: false,
+    };
+    allTodos.push(todoObject);
+    saveItem();
+    renderTodos();
+    todoInput.value = "";
+  }
+}
 function renderTodos() {
   todoListUL.innerHTML = "";
 
@@ -59,21 +65,33 @@ function renderTodos() {
     if (currentFilter === "completed") return todo.completed;
     return true;
   });
-  filteredTodos.forEach((todo) => {
-    const todoItem = createTodoItem(todo);
-    todoListUL.appendChild(todoItem); 
+
+  filteredTodos.forEach((todo, index) => {
+    const todoItem = createTodoItem(todo, index);
+    todoListUL.appendChild(todoItem);
   });
+
+  document.querySelector(".items-left").textContent = `${
+    allTodos.filter((todo) => !todo.completed).length
+  } items left`;
+
   if (filteredTodos.length > 5) {
     todoListUL.classList.add("scrollable");
   } else {
     todoListUL.classList.remove("scrollable");
   }
 }
+// Filter todos (all, active, completed)
+filterButtons.addEventListener("click", (e) => {
+  if (e.target.classList.contains("filter")) {
+    currentFilter = e.target.dataset.filter;
+    renderTodos();
+  }
+});
 
 // check and delete todo
 todoListUL.addEventListener("click", (e) => {
-  const index = Array.from(todoListUL.children).indexOf(
-    e.target.parentElement);
+  const index = Array.from(todoListUL.children).indexOf(e.target.parentElement);
   if (e.target.classList.contains("list-item-delete-icon")) {
     allTodos.splice(index, 1);
   } else if (e.target.classList.contains("list-item-checkbox")) {
@@ -83,42 +101,33 @@ todoListUL.addEventListener("click", (e) => {
   renderTodos();
 });
 
-// Filter todos (all, active, completed)
-function filterTodos(filter) {
-
-
-  switch (filter) {
-    case "all":
-      currentFilter = allTodos;
-      break;
-    case "active":
-      currentFilter = allTodos.filter(todo => !todo.completed);
-      break;
-    case "completed":
-      currentFilter = allTodos.filter(todo => todo.completed);
-      break;
-  }
-
-  renderTodos(currentFilter);
-}
-
 // Toggle completion
 function toggleCompletion(todoId) {
-  todos = todos.map(todo =>
+  allTodos = allTodos.map((todo) =>
     todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
   );
   saveTodos();
   renderTodos();
 }
 
-
+// Clear completed
 function clearCompletedTodos() {
-  allTodos = allTodos.filter(todo => !todo.completed);
+  allTodos = allTodos.filter((todo) => !todo.completed);
   renderTodos();
 }
-// Drag and drop functionality
+
+clearCompletedBtn.addEventListener("click", () => {
+  allTodos = allTodos.filter((todo) => !todo.completed);
+  saveItem();
+  renderTodos();
+});
+
+// Drag order functionality
 todoListUL.addEventListener("dragstart", (e) => {
-  e.dataTransfer.setData("text", Array.from(todoListUL.children).indexOf(e.target));
+  e.dataTransfer.setData(
+    "text",
+    Array.from(todoListUL.children).indexOf(e.target)
+  );
 });
 
 todoListUL.addEventListener("dragover", (e) => {
@@ -127,7 +136,7 @@ todoListUL.addEventListener("dragover", (e) => {
 
 todoListUL.addEventListener("drop", (e) => {
   e.preventDefault();
-  const draggedIndex = e.dataTransfer.getData("text/plain");
+  const draggedIndex = e.dataTransfer.getData("text");
   const targetIndex = Array.from(todoListUL.children).indexOf(e.target);
 
   if (draggedIndex !== targetIndex) {
@@ -136,6 +145,5 @@ todoListUL.addEventListener("drop", (e) => {
     renderTodos();
   }
 });
-
 
 renderTodos();
