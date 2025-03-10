@@ -5,13 +5,14 @@ const todoInput = document.getElementById("todo-input");
 const todoListUL = document.querySelector(".todo-list");
 const filterButtons = document.querySelectorAll(".filter-buttons button");
 const clearCompletedBtn = document.querySelector(".clear-completed");
-const filterBtn = document.querySelector(".filter");
 const itemsLeft = document.querySelector(".items-left");
 
 // Theme toggle
 sunToggle.addEventListener("click", () => {
   document.body.classList.toggle("night");
 });
+
+
 
 let allTodos = JSON.parse(localStorage.getItem("todos")) || [];
 let currentFilter = "all";

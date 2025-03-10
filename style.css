@@ -190,8 +190,15 @@ h1 {
   animation: floating 5s ease-in-out infinite;
 }
 
-.night .todo-list-container {
+.night .todo-list-container .clear-completed {
   background: hsl(237, 14%, 26%);
+}
+
+.night .items-left .clear-completed {
+  background: hsl(237, 14%, 26%);
+  background: none;
+  border: none;
+  color: hsl(233, 14%, 35%);
 }
 
 .list {
@@ -310,10 +317,16 @@ input[type="checkbox"]:checked ~ .list-item-text {
   opacity: 1;
 }
 .list:hover .list-item-text {
-  color: hsl(235, 21%, 11%)
+  color: hsl(235, 21%, 11%);
 }
- .filter:hover{
-  color: hsl(235, 21%, 11%)
+.filter:hover {
+  color: hsl(235, 21%, 11%);
+}
+.items-left:hover {
+  color: hsl(235, 21%, 11%);
+}
+.clear-completed:hover {
+  color: hsl(235, 21%, 11%);
 }
 .scrollable {
   max-height: 300px;
