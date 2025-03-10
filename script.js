@@ -6,13 +6,57 @@ const todoListUL = document.querySelector(".todo-list");
 const filterButtons = document.querySelectorAll(".filter-buttons button");
 const clearCompletedBtn = document.querySelector(".clear-completed");
 const itemsLeft = document.querySelector(".items-left");
+const tourModal = document.getElementById('tourModal');
+const startTourBtn = document.getElementById('startTourBtn');
+const skipTourBtn = document.getElementById('skipTourBtn');
 
 // Theme toggle
 sunToggle.addEventListener("click", () => {
   document.body.classList.toggle("night");
 });
 
+// Show tour modal on page load
+tourModal.style.display = 'block';
 
+// Start the tour
+startTourBtn.onclick = function () {
+  tourModal.style.display = 'none';
+  introJs().setOptions({
+    steps: [
+      {
+        intro: "Welcome to your personalized dashboard! Let's take a quick tour."
+      },
+      {
+        element: document.querySelector('.sun-toggle'),
+        intro: "Click here to change to Dark mode."
+      },
+      {
+        element: document.querySelector('#todo-input'),
+        intro: "You can create or search your tasks here."
+      },
+      {
+        element: document.querySelector('.todo-list'),
+        intro: "This is the 'To Do' section where you can see tasks that need to be started."
+      },
+      {
+        element: document.querySelector('.filter-buttons'),
+        intro: "Use these buttons to filter tasks by their status."
+      },
+      {
+        element: document.querySelector('.clear-completed'),
+        intro: "Click here to clear completed tasks."
+      },
+      {
+        intro: "That's the end of the tour! You are ready to start using the dashboard."
+      }
+    ]
+  }).start();
+};
+
+// Skip the tour
+skipTourBtn.onclick = function () {
+  tourModal.style.display = 'none';
+};
 
 let allTodos = JSON.parse(localStorage.getItem("todos")) || [];
 let currentFilter = "all";
