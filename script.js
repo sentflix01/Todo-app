@@ -180,7 +180,8 @@ todoListUL.addEventListener("dragover", (e) => {
 todoListUL.addEventListener("drop", (e) => {
   e.preventDefault();
   const draggedIndex = e.dataTransfer.getData("text");
-  const targetIndex = Array.from(todoListUL.children).indexOf(e.target);
+  const targetElement = e.target.closest("li");
+  const targetIndex = Array.from(todoListUL.children).indexOf(targetElement);
 
   if (draggedIndex !== targetIndex) {
     const [movedTodo] = allTodos.splice(draggedIndex, 1);
