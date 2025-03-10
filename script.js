@@ -3,9 +3,12 @@ const sunToggle = document.querySelector(".sun-toggle");
 const todoSearch = document.querySelector(".todoSearch");
 const todoInput = document.getElementById("todo-input");
 const todoListUL = document.querySelector(".todo-list");
-const filterButtons = document.querySelector(".filter-buttons");
-const clearCompleted = document.querySelector(".clear-completed");
+const filterButtons = document.querySelectorAll(".filter-buttons button");
+const clearCompletedBtn = document.querySelector(".clear-completed");
+const filterBtn = document.querySelector(".filter");
+const itemsLeft = document.querySelector(".items-left");
 
+// Theme toggle
 sunToggle.addEventListener("click", () => {
   document.body.classList.toggle("night");
 });
@@ -51,6 +54,16 @@ function createTodoItem(todo, index) {
   return todoLi;
 }
 
+// Filter todos (all, active, completed)
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+    currentFilter = button.dataset.filter;
+    renderTodos();
+  });
+});
+
 function renderTodos() {
   todoListUL.innerHTML = "";
 
@@ -59,21 +72,21 @@ function renderTodos() {
     if (currentFilter === "completed") return todo.completed;
     return true;
   });
-  filteredTodos.forEach((todo) => {
-    const todoItem = createTodoItem(todo);
-    todoListUL.appendChild(todoItem); 
+  filteredTodos.forEach((todo, index) => {
+    const todoItem = createTodoItem(todo, index);
+    todoListUL.appendChild(todoItem);
   });
   if (filteredTodos.length > 5) {
     todoListUL.classList.add("scrollable");
   } else {
     todoListUL.classList.remove("scrollable");
   }
+  updateItemsLeft();
 }
 
-// check and delete todo
+// Check and delete todo
 todoListUL.addEventListener("click", (e) => {
-  const index = Array.from(todoListUL.children).indexOf(
-    e.target.parentElement);
+  const index = Array.from(todoListUL.children).indexOf(e.target.parentElement);
   if (e.target.classList.contains("list-item-delete-icon")) {
     allTodos.splice(index, 1);
   } else if (e.target.classList.contains("list-item-checkbox")) {
@@ -83,42 +96,25 @@ todoListUL.addEventListener("click", (e) => {
   renderTodos();
 });
 
-// Filter todos (all, active, completed)
-function filterTodos(filter) {
-
-
-  switch (filter) {
-    case "all":
-      currentFilter = allTodos;
-      break;
-    case "active":
-      currentFilter = allTodos.filter(todo => !todo.completed);
-      break;
-    case "completed":
-      currentFilter = allTodos.filter(todo => todo.completed);
-      break;
-  }
-
-  renderTodos(currentFilter);
-}
-
-// Toggle completion
-function toggleCompletion(todoId) {
-  todos = todos.map(todo =>
-    todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
-  );
-  saveTodos();
+// Clear completed
+clearCompletedBtn.addEventListener("click", () => {
+  allTodos = allTodos.filter((todo) => !todo.completed);
+  saveItem();
   renderTodos();
+});
+
+// Update Items Left
+function updateItemsLeft() {
+  const activeCount = allTodos.filter((todo) => !todo.completed).length;
+  itemsLeft.textContent = `${activeCount} item${activeCount !== 1 ? "s" : ""} left`;
 }
 
-
-function clearCompletedTodos() {
-  allTodos = allTodos.filter(todo => !todo.completed);
-  renderTodos();
-}
-// Drag and drop functionality
+// Drag order functionality
 todoListUL.addEventListener("dragstart", (e) => {
-  e.dataTransfer.setData("text", Array.from(todoListUL.children).indexOf(e.target));
+  e.dataTransfer.setData(
+    "text",
+    Array.from(todoListUL.children).indexOf(e.target)
+  );
 });
 
 todoListUL.addEventListener("dragover", (e) => {
@@ -127,15 +123,15 @@ todoListUL.addEventListener("dragover", (e) => {
 
 todoListUL.addEventListener("drop", (e) => {
   e.preventDefault();
-  const draggedIndex = e.dataTransfer.getData("text/plain");
+  const draggedIndex = e.dataTransfer.getData("text");
   const targetIndex = Array.from(todoListUL.children).indexOf(e.target);
 
   if (draggedIndex !== targetIndex) {
     const [movedTodo] = allTodos.splice(draggedIndex, 1);
     allTodos.splice(targetIndex, 0, movedTodo);
+    saveItem();
     renderTodos();
   }
 });
-
 
 renderTodos();

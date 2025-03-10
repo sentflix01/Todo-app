@@ -290,6 +290,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
 .filter.active {
   color: hsl(220, 98%, 61%);
 }
+
 .drag-drop-text {
   display: flex;
   justify-content: center;
@@ -307,6 +308,12 @@ input[type="checkbox"]:checked ~ .list-item-text {
 }
 .list:hover .list-item-delete-icon {
   opacity: 1;
+}
+.list:hover .list-item-text {
+  color: hsl(235, 21%, 11%)
+}
+ .filter:hover{
+  color: hsl(235, 21%, 11%)
 }
 .scrollable {
   max-height: 300px;
