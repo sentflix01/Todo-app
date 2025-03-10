@@ -14,16 +14,24 @@ let allTodos = JSON.parse(localStorage.getItem("todos")) || [];
 let currentFilter = "all";
 const saveItem = () => localStorage.setItem("todos", JSON.stringify(allTodos));
 
-<<<<<<< Updated upstream
-function saveTodos() {
-  localStorage.setItem("todos", JSON.stringify(allTodos));
-}
-
 todoSearch.addEventListener("submit", (e) => {
   e.preventDefault();
   addTodo();
-  renderTodos();
 });
+
+function addTodo() {
+  const todoText = todoInput.value.trim();
+  if (todoText.length > 0) {
+    const todoObject = {
+      text: todoText,
+      completed: false,
+    };
+    allTodos.push(todoObject);
+    saveItem();
+    renderTodos();
+    todoInput.value = "";
+  }
+}
 
 function createTodoItem(todo, index) {
   const todoLi = document.createElement("li");
@@ -43,20 +51,6 @@ function createTodoItem(todo, index) {
   return todoLi;
 }
 
-// Add new todo
-function addTodo() {
-  const todoText = todoInput.value.trim();
-  if (todoText.length > 0) {
-    const todoObject = {
-      text: todoText,
-      completed: false,
-    };
-    allTodos.push(todoObject);
-    saveItem();
-    renderTodos();
-    todoInput.value = "";
-  }
-}
 function renderTodos() {
   todoListUL.innerHTML = "";
 
@@ -81,13 +75,6 @@ function renderTodos() {
     todoListUL.classList.remove("scrollable");
   }
 }
-// Filter todos (all, active, completed)
-filterButtons.addEventListener("click", (e) => {
-  if (e.target.classList.contains("filter")) {
-    currentFilter = e.target.dataset.filter;
-    renderTodos();
-  }
-});
 
 filterButtons.addEventListener("click", (e) => {
   if (e.target.classList.contains("filter")) {
@@ -107,40 +94,12 @@ todoListUL.addEventListener("click", (e) => {
   renderTodos();
 });
 
-// Filter todos (all, active, completed)
-function filterTodos(filter) {
-
-
-  switch (filter) {
-    case "all":
-      currentFilter = allTodos;
-      break;
-    case "active":
-      currentFilter = allTodos.filter(todo => !todo.completed);
-      break;
-    case "completed":
-      currentFilter = allTodos.filter(todo => todo.completed);
-      break;
-  }
-
-  renderTodos(currentFilter);
-}
-
-// Toggle completion
-function toggleCompletion(todoId) {
-  todos = todos.map(todo =>
-    todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
-  );
-  saveTodos();
+clearCompleted.addEventListener("click", () => {
+  allTodos = allTodos.filter((todo) => !todo.completed);
+  saveItem();
   renderTodos();
-}
+});
 
-
-function clearCompletedTodos() {
-  allTodos = allTodos.filter(todo => !todo.completed);
-  renderTodos();
-}
-// Drag and drop functionality
 todoListUL.addEventListener("dragstart", (e) => {
   e.dataTransfer.setData(
     "text",
@@ -165,55 +124,3 @@ todoListUL.addEventListener("drop", (e) => {
 });
 
 renderTodos();
-=======
-const img = document.querySelector('.img')
-const sun = document.querySelector('.sun');
-const todoSearch = document.querySelector('.todoSearch');
-const addTask = document.querySelector('.add-task');
-const todoInput = document.querySelector('.TodoInput');
-const todoList = document.querySelector('.todo-list');
-const followupButtons = document.querySelector('.followupButtons');
-const itemLeft = document.querySelector('.items-left');
-const filter = document.querySelector('.filter');
-const clearCompleted = document.querySelector('.clear-completed');
-
-// Load saved todos from local storage
-function loadTodos() {
-  const savedTodos = localStorage.getItem("todos");
-  if (savedTodos) {
-      todos = JSON.parse(savedTodos);
-  }
-}
-
-getLocalStorage() {
-  const data = JSON.parse(localStorage.getItem('todo-list'));
-}
-// Save todos to local storage
-function saveTodos() {
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
-setLocalStorage() {
-  localStorage.setItem('todos', JSON.stringify(todos));
-};
-// Add new todo
-todoSearch.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const text = todoInput.value.trim();
-
-  if (text) {
-    const todo = {
-      id: Date.now(),
-      text,
-      completed: false,
-    };
-
-    todos.push(todo);
-    saveTodos();
-    renderTodos();
-    todoInput.value = "";
-  }
-});
-
-
-
->>>>>>> Stashed changes
