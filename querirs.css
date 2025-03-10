@@ -2,7 +2,11 @@
 @media (max-width: 375px) {
   .background-image{
     /* height: 31.4rem; */
+<<<<<<< Updated upstream
     /* height: 30.66vh; */
+=======
+    height: 30.66vh;
+>>>>>>> Stashed changes
     width: 100%;
     background-size: cover;
     background-position: center;
