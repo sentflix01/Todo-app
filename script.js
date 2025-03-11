@@ -25,8 +25,7 @@ startTourBtn.onclick = function () {
     .setOptions({
       steps: [
         {
-          intro:
-            "Welcome to SENT-TODO App! Let's take a quick tour.",
+          intro: "Welcome to SENT-TODO App! Let's take a quick tour.",
         },
         {
           element: document.querySelector(".sun-toggle"),
