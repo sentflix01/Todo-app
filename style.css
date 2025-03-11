@@ -75,6 +75,8 @@ html .night {
   background-color: hsl(235, 21%, 11%);
 }
 
+
+
 .background-image {
   height: 31.4rem;
   /* height: 30.66vh; */
@@ -106,6 +108,19 @@ h1 {
   font-size: 4rem;
   letter-spacing: 1.6rem;
   font-weight: 700;
+  animation: h1 5s linear infinite;
+}
+
+@keyframes h1{
+  0% {transform: rotateX(0deg) rotateY(0deg);}
+  
+  25% {transform: rotateX(0deg) rotateY(90deg);}
+
+  50% {transform: rotateX(0deg) rotateY(180deg);}
+  
+  75% {transform: rotateX(0deg) rotateY(180deg);}
+  
+  100% {transform: rotateX(180deg) rotateY(180deg);}
 }
 
 .sun,

@@ -10,15 +10,25 @@ const tourModal = document.getElementById("tourModal");
 const startTourBtn = document.getElementById("startTourBtn");
 const skipTourBtn = document.getElementById("skipTourBtn");
 
-// Theme toggle
+
+/*************************************/
+/*Theme toggle*/
+/************************************/
+
 sunToggle.addEventListener("click", () => {
   document.body.classList.toggle("night");
 });
 
-// Show tour modal on page load
+/*************************************/
+/*Show tour modal on page load*/
+/************************************/
+
 tourModal.style.display = "block";
 
-// Start the tour
+/*************************************/
+/*Start the tour*/
+/************************************/
+
 startTourBtn.onclick = function () {
   tourModal.style.display = "none";
   introJs()
@@ -61,14 +71,25 @@ startTourBtn.onclick = function () {
     .start();
 };
 
-// Skip the tour
+/*************************************/
+/*Skip the tour*/
+/************************************/
+
 skipTourBtn.onclick = function () {
   tourModal.style.display = "none";
 };
 
+/*************************************/
+/*localStorage*/
+/************************************/
+
 let allTodos = JSON.parse(localStorage.getItem("todos")) || [];
 let currentFilter = "all";
 const saveItem = () => localStorage.setItem("todos", JSON.stringify(allTodos));
+
+/*************************************/
+/*add input value*/
+/************************************/
 
 todoSearch.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -89,6 +110,10 @@ function addTodo() {
   }
 }
 
+/*************************************/
+/*generate todo list*/
+/************************************/
+
 function createTodoItem(todo, index) {
   const todoLi = document.createElement("li");
   const todoId = "todo-" + index;
@@ -107,7 +132,10 @@ function createTodoItem(todo, index) {
   return todoLi;
 }
 
-// Filter todos (all, active, completed)
+/*************************************/
+/*Filter todos (all, active, completed)*/
+/************************************/
+
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
     filterButtons.forEach((btn) => btn.classList.remove("active"));
@@ -135,9 +163,12 @@ function renderTodos() {
     todoListUL.classList.remove("scrollable");
   }
   updateItemsLeft();
-}
+};
 
-// Check and delete todo
+/*************************************/
+/*Check and delete todo*/
+/************************************/
+
 todoListUL.addEventListener("click", (e) => {
   const index = Array.from(todoListUL.children).indexOf(e.target.parentElement);
   if (e.target.classList.contains("list-item-delete-icon")) {
@@ -149,14 +180,20 @@ todoListUL.addEventListener("click", (e) => {
   renderTodos();
 });
 
-// Clear completed
+/*************************************/
+/*Clear completed*/
+/************************************/
+
 clearCompletedBtn.addEventListener("click", () => {
   allTodos = allTodos.filter((todo) => !todo.completed);
   saveItem();
   renderTodos();
 });
 
-// Update Items Left
+/*************************************/
+/* Update Items Left*/
+/************************************/
+
 function updateItemsLeft() {
   const activeCount = allTodos.filter((todo) => !todo.completed).length;
   itemsLeft.textContent = `${activeCount} item${
@@ -164,7 +201,10 @@ function updateItemsLeft() {
   } left`;
 }
 
-// Drag order functionality
+/*************************************/
+/*  Drag order functionality*/
+/************************************/
+
 todoListUL.addEventListener("dragstart", (e) => {
   e.dataTransfer.setData(
     "text",
