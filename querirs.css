@@ -1,196 +1,117 @@
-rem and em do not depend on html font-size in media queries! Instead, 1rem = 1em = 16px*/
-/*************************************/
-/*BELOW 1440PX (sMALLER DESKTOPS) */
-/************************************/
- @media (max-width: 90em) {
-
-} 
-/*************************************/
-/*BELOW 1200PX (sMALLER DESKTOPS) max-width: 75em means 1200/16 = 75*/
-/************************************/
-/* @media (max-width: 75em) {
-  html {
-    font-size: 56.25%; 9px */
-    /* or 9px/16px = 0.5625px */
-  /* }
-  .grid {
-    column-gap: 4.8rem;
-    row-gap: 6.4rem;
-  }
-  .heading-secondary {
-    font-size: 3.6rem;
-  }
-  .heading-tertiary {
-    font-size: 2.4rem;
-  }
-  .header {
-    padding: 0 3.2rem;
-  }
-  .hero {
-    gap: 3.2rem;
-  }
-  .main-nav-list {
-    padding: 3.2rem;
-  }
-  .testimonials-container {
-    padding: 9.6rem 3.2rem;
-  }
-} */
-
+/* rem and em do not depend on html font-size in media queries! Instead, 1rem = 1em = 16px*/
 /*************************************/
 /*BELOW 944PX (Tablets) max-width: 59em means 944/16 = 59*/
 /************************************/
-/* @media (max-width: 59em) {
-  html {
-    font-size: 50%; 8px */
-    /* or 8px/16px = 0.5px */
-  /* }
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 0 8rem;
-    gap: 6.4rem;
-  }
-
-  .hero-text-box,
-  .hero-img-box {
-    text-align: center;
-  }
-
-  .hero-img {
-    width: 60%;
-  }
-
-  .delivered-meals {
-    justify-content: center;
-    margin-top: 3.2rem;
-  }
-
-  .logos img {
-    height: 2.4rem;
-  }
-
-  .step-number {
-    font-size: 7.4rem;
-  }
-
-  .meal-content {
-    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
-  }
-
-  .section-testimonials {
-    grid-template-columns: 1fr;
-  }
-  .gallery {
-    grid-template-columns: repeat(6, 1fr);
-  }
-  .cta {
-    /* 3/5=60% + 2/5=40%*/
-    /* grid-template-columns: 3fr 2fr;
-  }
-  .cta-form {
-    grid-template-columns: 1fr;
-  }
-  .btn--form {
-    margin-top: 1.2rem;
-  }
-
-  MOBILE NAVIGATION
-  .btn-mobile-nav {
-    display: block;
-    z-index: 999;
-  }
-  .main-nav {
-    background-color: rgba(255, 255, 255, 0.682);
-    position: absolute;
-    top: 0;
-    left: 0;
+@media (max-width: 59em) {
+  .background-image {
+    /* height: 37.5rem; */
+    height: 30.66vh;
     width: 100%;
-    height: 100vh;
-    transform: translateX(100%);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.5s ease-in; */ */
-    /* hide nav */
-    /* Allows No transitions at all  */
-    /* display: none; */
-
-    /* 1.hide it visually */
-    /* opacity: 0; */
-    /* 2. make it unaccessible to mouse and keyboard */
-    /* pointer-events: none; */
-    /* 3.hide it from screen reader */
-    /* visibility: hidden; 
-   } */
-
-  /* .nav-open .icon-mobile-nav[name="close-outline"] {
-    display: block;
+    
   }
-  .nav-open .icon-mobile-nav[name="menu-outline"] {
-    display: none;
+  .todo-header {
+    width: 52rem;
   }
-  .nav-open .main-nav {
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
-    transform: translateX(0);
+  .todoSearch {
+    width: 52rem;
   }
+  .todoSearch  input {
+    width: 52rem;
+  }
+  .todo-list-container {
+    width: 52rem;
+  }
+  .body {
+    background-color:green;
+  }
+} 
 
-  .main-nav-list {
-    flex-direction: column;
-    gap: 4.8rem;
-  }
 
-  .main-nav-link:link,
-  .main-nav-link:visited {
-    font-size: 3rem;
-  }
-} */
 /*************************************/
 /*BELOW 700PX (Tablets) max-width: 44em means 700/16 = 44*/
 /************************************/
-/* @media (max-width: 44em) {
-  .grid--3-cols,
-  .grid--4-cols {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 44em) {
+  /* .background-image {
+    /* height: 37.5rem; */
+    .background-image {
+      /* height: 37.5rem; */
+      height: 30.66vh;
+      width: 100%;
+      
+    }
+  .todo-header {
+    width: 48rem;
   }
-  .diets {
-    grid-column: 1 / -1;
-    justify-self: center;
+  .todoSearch {
+    width: 48rem;
   }
-  .heading-secondary {
-    margin-bottom: 4.8rem;
+  .todoSearch  input {
+    width: 48rem;
   }
-
-  .pricing-plan {
-    width: 100%;
+  .todo-list-container {
+    width: 48rem;
   }
-  .grid--footer {
-    grid-template-columns: repeat(6, 1fr);
+  .body {
+    background-color:blue;
   }
-
-  .logo-col,
-  .address-col {
-    grid-column: span 3;
-  }
-
-  .nav-col {
-    grid-column: span 2;
-    grid-row: 1;
-    margin-bottom: 3.2rem;
-  }
-} */
-
+}  
 /*************************************/
 /*BELOW 375PX (Tablets) max-width: 34em means 550/16 = 34*/
 /************************************/
- @media (max-width: 34em) { 
+@media (max-width: 34em) {
+  .background-image {
+    /* height: 37.5rem; */
+    height: 30.66vh;
+    width: 100%;
+    background-image: url("../images/bg-mobile-light.jpg");
+  }
+  .todo-header {
+    width: 44rem;
+  }
+  .todoSearch {
+    width: 44rem;
+  }
+  .todoSearch  input {
+    width: 44rem;
+  }
+  .todo-list-container {
+    width: 44rem;
+  }
+  .body {
+    background-color:red;
+  }
+} 
+/*************************************/
+/*BELOW 1344PX (sMALLER DESKTOPS) */
+/************************************/
+@media (max-width: 31em) {
+  .background-image {
+    /* height: 37.5rem; */
+    height: 30.66vh;
+    background-image: url("../images/bg-mobile-light.jpg");
+  }
+  .todo-header {
+    width: 40rem;
+  }
+  .todoSearch {
+    width: 40rem;
+  }
+  .todoSearch  input {
+    width: 40rem;
+  }
+  .todo-list-container {
+    width: 40rem;
+  }
+  .body {
+    background-color: aqua;
+  }
+}
 
-  
 
- }
-/* FONT SIZE SYSTEM (px)
+
+
+
+ /* FONT SIZE SYSTEM (px)
   10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
    - spacing system (px)
   2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128

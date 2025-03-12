@@ -75,8 +75,6 @@ html .night {
   background-color: hsl(235, 21%, 11%);
 }
 
-
-
 .background-image {
   height: 31.4rem;
   /* height: 30.66vh; */
@@ -205,7 +203,6 @@ h1 {
   border-radius: 5px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   animation: floating 5s ease-in-out infinite;
-  max-width: 600px;
   margin: 0 auto;
 }
 
