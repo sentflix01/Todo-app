@@ -206,9 +206,7 @@ h1 {
   margin: 0 auto;
 }
 
-.night .todo-list-container {
-  background: hsl(237, 14%, 26%);
-}
+.night .todo-list-container ,
 .night .clear-completed {
   background: hsl(237, 14%, 26%);
 }
@@ -332,26 +330,10 @@ input[type="checkbox"]:checked ~ .list-item-text {
   font-family: Josefin Sans;
   color: hsl(234, 11%, 52%);
 }
-.delete-btn {
-  opacity: 0;
-  transition: opacity 0.2s;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: hsl(236, 9%, 61%);
-}
-.list:hover .list-item-delete-icon {
-  opacity: 1;
-}
-.list:hover .list-item-text {
-  color: hsl(235, 21%, 11%);
-}
-.filter:hover {
-  color: hsl(235, 21%, 11%);
-}
-.items-left:hover {
-  color: hsl(235, 21%, 11%);
-}
+
+.list:hover .list-item-text ,
+.filter:hover ,
+.items-left:hover ,
 .clear-completed:hover {
   color: hsl(235, 21%, 11%);
 }
