@@ -21,9 +21,6 @@
   .todo-list-container {
     width: 52rem;
   }
-  .body {
-    background-color:green;
-  }
 } 
 
 
@@ -35,9 +32,13 @@
     /* height: 37.5rem; */
     .background-image {
       /* height: 37.5rem; */
+      background-image: url("../images/bg-mobile-light.jpg");
       height: 30.66vh;
       width: 100%;
       
+    }
+    .night .background-image {
+      background-image: url("../images/bg-mobile-dark.jpg");
     }
   .todo-header {
     width: 48rem;
@@ -51,9 +52,6 @@
   .todo-list-container {
     width: 48rem;
   }
-  .body {
-    background-color:blue;
-  }
 }  
 /*************************************/
 /*BELOW 375PX (Tablets) max-width: 34em means 550/16 = 34*/
@@ -65,6 +63,9 @@
     width: 100%;
     background-image: url("../images/bg-mobile-light.jpg");
   }
+  .night .background-image {
+    background-image: url("../images/bg-mobile-dark.jpg");
+  }
   .todo-header {
     width: 44rem;
   }
@@ -76,9 +77,6 @@
   }
   .todo-list-container {
     width: 44rem;
-  }
-  .body {
-    background-color:red;
   }
 } 
 /*************************************/
@@ -90,6 +88,9 @@
     height: 30.66vh;
     background-image: url("../images/bg-mobile-light.jpg");
   }
+  .night .background-image {
+    background-image: url("../images/bg-mobile-dark.jpg");
+  }
   .todo-header {
     width: 40rem;
   }
@@ -101,9 +102,6 @@
   }
   .todo-list-container {
     width: 40rem;
-  }
-  .body {
-    background-color: aqua;
   }
 }
 
