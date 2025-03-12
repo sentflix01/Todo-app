@@ -82,14 +82,14 @@ html .night {
   background-size: cover;
   background-position: center;
   position: absolute;
-  background-image: url("../images/bg-desktop-light.jpg");
+  background-image: url("./images/bg-desktop-light.jpg");
   overflow: hidden;
   display: block;
   z-index: -1;
 }
 
 .night .background-image {
-  background-image: url("../images/bg-desktop-dark.jpg");
+  background-image: url("./images/bg-desktop-dark.jpg");
 }
 
 .todo-header {

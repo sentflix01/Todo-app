@@ -1,0 +1,14 @@
+{
+  "name": "sent-todo",
+  "version": "1.0.0",
+  "description": "task monitering",
+  "scripts": {
+    "start": "parcel index.html",
+      "build": "parcel build index.html"
+  },
+  "author": "Sintayehu Mulugeta",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}
