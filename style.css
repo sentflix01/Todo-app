@@ -382,13 +382,13 @@ input[type="checkbox"]:checked ~ .list-item-text {
   cursor: pointer;
 }
 
-.btn-primary {
+.btn-start {
   background-color: #007bff;
   color: white;
   border: none;
 }
 
-.btn-secondary {
+.btn-skip {
   background-color: #6c757d;
   color: white;
   border: none;

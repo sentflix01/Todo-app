@@ -321,13 +321,13 @@ input[type="checkbox"]:checked ~ .list-item-text {
   padding: 10px 20px;
 }
 
-.btn-primary {
+.btn-start {
   color: #fff;
   background-color: #007bff;
   border: none;
 }
 
-.btn-secondary {
+.btn-skip {
   color: #fff;
   background-color: #6c757d;
   border: none;
