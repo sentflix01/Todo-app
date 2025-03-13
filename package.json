@@ -8,8 +8,7 @@
   },
   "author": "Sintayehu Mulugeta",
   "license": "ISC",
-  "devDependencies": {
-    "parcel": "^2.13.3",
-    "parcel-bundler": "^1.12.5"
+  "dependencies": {
+    "parcel": "^2.12.0"
   }
 }
