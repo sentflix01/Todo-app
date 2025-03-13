@@ -325,7 +325,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
 .drag-drop-text {
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 10rem;
   font-size: 1.8rem;
   font-family: Josefin Sans;
   color: hsl(234, 11%, 52%);
