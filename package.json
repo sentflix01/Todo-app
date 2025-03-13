@@ -4,12 +4,9 @@
   "description": "task monitering",
   "default": "index.html",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir dist"
+    "start": "index.html",
+    "build": "build index.html"
   },
   "author": "Sintayehu Mulugeta",
-  "license": "ISC",
-  "dependencies": {
-    "parcel": "^2.13.3"
-  }
+  "license": "ISC"
 }
