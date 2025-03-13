@@ -15,3 +15,16 @@
 .DS_Store
 .prettierignore
 node_modules
+[build]
+  base = "."
+  publish = "build"
+  ignore = "git log -1 --pretty=%B"
+
+[build.environment]
+  NODE_ENV = "production"
+
+# Exclude large files or directories
+[[build.ignore]]
+  path = "node_modules"
+[[build.ignore]]
+  path = "*.mp4"
