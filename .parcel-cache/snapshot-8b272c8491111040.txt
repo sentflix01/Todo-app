@@ -16,15 +16,15 @@
 66D:\new Project\todo-app-main\node_modules\csso\cjs\replace\Url.cjs133863269656820490 0
 94D:\new Project\todo-app-main\node_modules\htmlnano\lib\modules\collapseAttributeWhitespace.mjs133863269679370147 0
 72D:\new Project\todo-app-main\node_modules\@swc\helpers\src\_inherits.mjs133863269710533952 0
-55D:\new Project\todo-app-main\dist\moon (5).42a930f2.png133863281390366964 0
+55D:\new Project\todo-app-main\dist\moon (5).42a930f2.png133863299879641049 0
 67D:\new Project\todo-app-main\node_modules\@swc\types\assumptions.js133863269542974270 0
 48D:\new Project\todo-app-main\node_modules\@lezer133863269529902795 1
 84D:\new Project\todo-app-main\node_modules\@swc\helpers\_\_class_apply_descriptor_get133863269701609265 1
-62D:\new Project\todo-app-main\dist\bg-mobile-light.50c659f6.jpg133863281390942308 0
+62D:\new Project\todo-app-main\dist\bg-mobile-light.50c659f6.jpg133863299879661063 0
 90D:\new Project\todo-app-main\node_modules\csso\node_modules\css-tree\cjs\walker\create.cjs133863269637462853 0
 80D:\new Project\todo-app-main\node_modules\source-map\lib\source-map-generator.js133863269616738290 0
 80D:\new Project\todo-app-main\node_modules\caniuse-lite\data\features\minmaxwh.js133863269714250919 0
-51D:\new Project\todo-app-main\dist\index.672d4772.js133863281390739270 0
+51D:\new Project\todo-app-main\dist\index.672d4772.js133863299879621056 0
 76D:\new Project\todo-app-main\node_modules\css-tree\lib\syntax\scope\value.js133863269704364973 0
 51D:\new Project\todo-app-main\node_modules\@mischnic133863269529891503 1
 99D:\new Project\todo-app-main\node_modules\dom-serializer\node_modules\entities\lib\maps\decode.json133863269603938460 0
@@ -47,30 +47,30 @@
 66D:\new Project\todo-app-main\node_modules\abortcontroller-polyfill133863269630080959 1
 119D:\new Project\todo-app-main\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\syntax\scope\selector.js133863269689414776 0
 86D:\new Project\todo-app-main\node_modules\caniuse-lite\data\features\css-first-line.js133863269694350386 0
-60D:\new Project\todo-app-main\dist\download (10).f4f6d2e2.png133863281390956069 0
+60D:\new Project\todo-app-main\dist\download (10).f4f6d2e2.png133863299879661063 0
 122D:\new Project\todo-app-main\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\syntax\pseudo\common\nth.js133863269682260385 0
 79D:\new Project\todo-app-main\node_modules\postcss-value-parser\lib\stringify.js133863269593714026 0
 85D:\new Project\todo-app-main\node_modules\csso\node_modules\css-tree\lib\syntax\scope133863269703814489 1
 64D:\new Project\todo-app-main\node_modules\update-browserslist-db133863269607549848 1
-52D:\new Project\todo-app-main\dist\index.fe5963ec.css133863281390366964 0
+52D:\new Project\todo-app-main\dist\index.fe5963ec.css133863299879611037 0
 58D:\new Project\todo-app-main\node_modules\msgpackr\LICENSE133863269542194743 0
 43D:\new Project\todo-app-main\style-guide.md133861653771617621 0
 85D:\new Project\todo-app-main\node_modules\lmdb\node_modules\node-addon-api\LICENSE.md133863269624632025 0
 63D:\new Project\todo-app-main\node_modules\css-tree\lib\index.js133863269700290041 0
 52D:\new Project\todo-app-main\node_modules\source-map133863269621774620 1
 97D:\new Project\todo-app-main\node_modules\lmdb\node_modules\node-addon-api\tools\eslint-format.js133863269621223806 0
-59D:\new Project\todo-app-main\dist\todo-app-main.3464ddca.js133863281390243703 0
+59D:\new Project\todo-app-main\dist\todo-app-main.3464ddca.js133863299879611037 0
 99D:\new Project\todo-app-main\node_modules\csso\cjs\restructure\prepare\createDeclarationIndexer.cjs133863269623918407 0
 77D:\new Project\todo-app-main\node_modules\csso\lib\replace\property\border.js133863269674740171 0
-51D:\new Project\todo-app-main\dist\mmmm.1684befb.png133863281390407349 0
+51D:\new Project\todo-app-main\dist\mmmm.1684befb.png133863299879631048 0
 75D:\new Project\todo-app-main\node_modules\@parcel\reporter-cli\src\utils.js133863269649197614 0
 58D:\new Project\todo-app-main\node_modules\stable\stable.js133863269591287011 0
 81D:\new Project\todo-app-main\node_modules\htmlnano\lib\modules\removeComments.mjs133863269682230419 0
-56D:\new Project\todo-app-main\dist\index.fe5963ec.css.map133863281391982951 0
+56D:\new Project\todo-app-main\dist\index.fe5963ec.css.map133863299880052898 0
 74D:\new Project\todo-app-main\node_modules\@swc\helpers\_\_jsx\package.json133863269705690830 0
 69D:\new Project\todo-app-main\node_modules\lightningcss\node\index.mjs133863269618470165 0
 87D:\new Project\todo-app-main\node_modules\@swc\helpers\cjs\_assert_this_initialized.cjs133863269606009605 0
-63D:\new Project\todo-app-main\dist\bg-desktop-light.bd4b12c3.jpg133863281390522233 0
+63D:\new Project\todo-app-main\dist\bg-desktop-light.bd4b12c3.jpg133863299879631048 0
 86D:\new Project\todo-app-main\node_modules\caniuse-lite\data\features\viewport-units.js133863269721177237 0
 60D:\new Project\todo-app-main\node_modules\term-size\index.js133863269606062777 0
 64D:\new Project\todo-app-main\node_modules\csso\cjs\clean\Raw.cjs133863269650321514 0
@@ -103,7 +103,7 @@
 103D:\new Project\todo-app-main\node_modules\css-select\node_modules\entities\lib\generated\encode-html.js133863269618402133 0
 85D:\new Project\todo-app-main\node_modules\caniuse-lite\data\features\accelerometer.js133863269602475301 0
 69D:\new Project\todo-app-main\node_modules\css-tree\lib\lexer\Lexer.js133863269701245461 0
-41D:\new Project\todo-app-main\package.json133863281383639829 0
+41D:\new Project\todo-app-main\package.json133863299875061720 0
 56D:\new Project\todo-app-main\dist\index.51503d78.css.map133863279181875333 0
 73D:\new Project\todo-app-main\node_modules\@parcel\transformer-svg\LICENSE133863269580149773 0
 82D:\new Project\todo-app-main\node_modules\dom-serializer\lib\esm\foreignNames.d.ts133863269618068323 0
@@ -115,7 +115,7 @@
 93D:\new Project\todo-app-main\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mdb_copy.c133863269658271739 0
 109D:\new Project\todo-app-main\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\tokenizer\utils.js133863269690960825 0
 92D:\new Project\todo-app-main\node_modules\caniuse-lite\data\features\css-deviceadaptation.js133863269693705144 0
-55D:\new Project\todo-app-main\dist\index.672d4772.js.map133863281392023304 0
+55D:\new Project\todo-app-main\dist\index.672d4772.js.map133863299880052898 0
 73D:\new Project\todo-app-main\node_modules\@parcel\utils\test\input\config133863269812386984 1
 63D:\new Project\todo-app-main\node_modules\svgo\plugins\_path.js133863269657402783 0
 134D:\new Project\todo-app-main\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\syntax\pseudo\common\nthWithOfClause.js133863269686253933 0
@@ -176,7 +176,7 @@
 35D:\new Project\todo-app-main\design133538273380000000 1
 99D:\new Project\todo-app-main\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\lib\types.ts133863269689506503 0
 72D:\new Project\todo-app-main\node_modules\htmlparser2\lib\FeedHandler.js133863269545235243 0
-33D:\new Project\todo-app-main\dist133863281392083806 1
+33D:\new Project\todo-app-main\dist133863299880233792 1
 47D:\new Project\todo-app-main\node_modules\json5133863269619022036 1
 73D:\new Project\todo-app-main\node_modules\css-tree\lib\generator\index.js133863269700218913 0
 59D:\new Project\todo-app-main\node_modules\mdn-data\index.js133863269594109855 0
@@ -5989,9 +5989,9 @@
 55D:\new Project\todo-app-main\dist\moon (5).402e361c.png133862810307403819 0
 55D:\new Project\todo-app-main\design\desktop-preview.jpg133538273380000000 0
 50D:\new Project\todo-app-main\.vscode\settings.json133846518713935418 0
-44D:\new Project\todo-app-main\dist\index.html133863281390243703 0
-61D:\new Project\todo-app-main\dist\bg-mobile-dark.29cc2c5c.jpg133863281390522233 0
-52D:\new Project\todo-app-main\dist\index.3a01df49.css133863281390739270 0
-62D:\new Project\todo-app-main\dist\bg-desktop-dark.953b245d.jpg133863281390877357 0
-63D:\new Project\todo-app-main\dist\todo-app-main.3464ddca.js.map133863281391865734 0
-56D:\new Project\todo-app-main\dist\index.3a01df49.css.map133863281392023304 0
+44D:\new Project\todo-app-main\dist\index.html133863299879611037 0
+52D:\new Project\todo-app-main\dist\index.3a01df49.css133863299879621056 0
+61D:\new Project\todo-app-main\dist\bg-mobile-dark.29cc2c5c.jpg133863299879631048 0
+62D:\new Project\todo-app-main\dist\bg-desktop-dark.953b245d.jpg133863299879641049 0
+63D:\new Project\todo-app-main\dist\todo-app-main.3464ddca.js.map133863299879874363 0
+56D:\new Project\todo-app-main\dist\index.3a01df49.css.map133863299880107666 0
