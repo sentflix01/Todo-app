@@ -260,13 +260,13 @@ input[type="checkbox"]:checked ~ .list-item-checkbox {
 
 input[type="checkbox"]:checked ~ .list-item-text {
   text-decoration: line-through;
-  color: hsl(233, 11%, 84%);
+  color:  hsl(233, 14%, 35%);
 }
 
 .list input[type="checkbox"]:checked ~ .list-item-checkbox::before {
   content: "✔️";
   /* content: '✓'; */
-  color: white;
+  color:  hsl(233, 14%, 35%);
   font-size: 14px;
   top: 50%;
   left: 50%;
@@ -287,7 +287,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
   background: none;
   border: none;
   cursor: pointer;
-  color: hsl(236, 9%, 61%);
+  /* color: hsl(236, 9%, 61%); */
 }
 
 .list:hover .list-item-delete-icon {
@@ -315,7 +315,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
   cursor: pointer;
   color: inherit;
   font-weight: 700;
-  color: hsl(236, 9%, 61%);
+  color: hsl(233, 14%, 35%);
 }
 
 .filter.active {
@@ -328,7 +328,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
   margin-top: 10rem;
   font-size: 1.8rem;
   font-family: Josefin Sans;
-  color: hsl(234, 11%, 52%);
+  color: hsl(233, 14%, 35%);
 }
 
 .list:hover .list-item-text ,
@@ -354,6 +354,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
   z-index: 1;
   left: 0;
   top: 0;
+  font-family: Josefin Sans;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -369,6 +370,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
   width: 30%;
  font-size: 1.8rem;
  text-align: center;
+ font-family: Josefin Sans;
 
 }
 

@@ -199,13 +199,13 @@ input[type="checkbox"]:checked ~ .list-item-checkbox {
 }
 
 input[type="checkbox"]:checked ~ .list-item-text {
-  color: #d2d3db;
+  color: #4d5066;
   text-decoration: line-through;
 }
 
 .list input[type="checkbox"]:checked ~ .list-item-checkbox:before {
   content: "✔️";
-  color: #fff;
+  color: #4d5066;
   font-size: 14px;
   position: absolute;
   top: 50%;
@@ -225,7 +225,6 @@ input[type="checkbox"]:checked ~ .list-item-text {
 .list-item-delete-icon {
   opacity: 0;
   cursor: pointer;
-  color: #9394a5;
   background: none;
   border: none;
   transition: opacity .2s;
@@ -254,7 +253,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
 
 .filter {
   cursor: pointer;
-  color: #9394a5;
+  color: #4d5066;
   background: none;
   border: none;
   font-weight: 700;
@@ -265,7 +264,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
 }
 
 .drag-drop-text {
-  color: #777a92;
+  color: #4d5066;
   justify-content: center;
   margin-top: 10rem;
   font-family: Josefin Sans;
@@ -293,6 +292,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
   background-color: #0006;
   width: 100%;
   height: 100%;
+  font-family: Josefin Sans;
   display: none;
   position: fixed;
   top: 0;
@@ -307,6 +307,7 @@ input[type="checkbox"]:checked ~ .list-item-text {
   width: 30%;
   margin: 15% auto;
   padding: 20px;
+  font-family: Josefin Sans;
   font-size: 1.8rem;
 }
 
